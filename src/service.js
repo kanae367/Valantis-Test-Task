@@ -1,4 +1,12 @@
-import data from '../md5.json';
+import md5 from "js-md5";
+
+const PASSWORD = import.meta.env.VITE_PASSWORD;
+
+const date = new Date();
+const currentMonth = String(date.getMonth() + 1);
+const api_key_date = String(date.getFullYear()) + (currentMonth < 10 ? '0' + String(currentMonth) : String(currentMonth)) + String(date.getDate());
+
+const API_KEY = md5(PASSWORD + api_key_date);
 
 const fetchData = async (body) => {
     return await fetch('http://api.valantis.store:40000/', {
@@ -7,7 +15,7 @@ const fetchData = async (body) => {
             "Accept": '*/*',
             "Accept-Encoding": "gzip, deflate, br",
             "Content-Type": "application/json",
-            "X-Auth": `${data.key}`
+            "X-Auth": `${API_KEY}`
         },
         body: JSON.stringify(body)
     }).then(response => response.json());
