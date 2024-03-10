@@ -20,7 +20,7 @@ const JewelleryList = () => {
                 <span className="card__price">Цена: {item.price}₽</span>
             </div>
         </li>    
-    ) : 'Loading';
+    ) : <div>Loading</div>;
 
     return(
         <ul className="jewellery-list">

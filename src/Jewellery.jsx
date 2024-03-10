@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import './Jewellery.css';
+import refreshIcon from './assets/refresh.svg';
 
 const options = ["name", "brand", "price"];
 
@@ -44,7 +45,7 @@ const Jewellery = () => {
 
         const requestObject = {
             action: 'filter',
-            params
+            params: params
         }
 
         if(Object.keys(requestObject.params).length === 0){
@@ -70,7 +71,7 @@ const Jewellery = () => {
                 </div>
 
                 <button type="submit" id='refresh-button'>
-                    <img className='refresh-icon' src="/refresh.svg" alt="refresh icon" />
+                    <img className='refresh-icon' src={refreshIcon} alt="refresh icon" />
                 </button>
             </form>
 
@@ -79,8 +80,8 @@ const Jewellery = () => {
             </div>
 
             <div className='navigation-block'>
-                <button onClick={handlePreviousButtonClick} disabled={Number(pageNumber) === 1} >{'<'}</button>
-                <button onClick={handleNextButtonClick} >{'>'}</button>
+                <button onClick={handlePreviousButtonClick} disabled={Number(pageNumber) === 1} >Назад</button>
+                <button onClick={handleNextButtonClick} >Вперед</button>
             </div>
         </>
     )

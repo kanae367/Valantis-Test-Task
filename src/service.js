@@ -9,7 +9,7 @@ const api_key_date = String(date.getFullYear()) + (currentMonth < 10 ? '0' + Str
 const API_KEY = md5(PASSWORD + api_key_date);
 
 const fetchData = async (body) => {
-    return await fetch('http://api.valantis.store:40000/', {
+    return await fetch('https://api.valantis.store:41000/', {
         method: "POST",
         headers: {
             "Accept": '*/*',
