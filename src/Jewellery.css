@@ -1,0 +1,28 @@
+.filters-container{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    border-radius: 8px;
+    padding: 1px;
+    height: 100px;
+    align-items: start;
+    margin: 0 auto;
+}
+
+#refresh-button{
+    width: 48px;
+    height: 48px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.refresh-icon{
+    width: 100%;
+}
+
+.filters{
+    display: flex;
+    gap: 20px;
+}

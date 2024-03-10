@@ -1,0 +1,28 @@
+.jewellery-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    list-style: none;
+}
+
+.card{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+.card__title{
+    font-size: 16px;
+}
+
+.card__footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.card__brand{
+    font-size: 14px;
+}
